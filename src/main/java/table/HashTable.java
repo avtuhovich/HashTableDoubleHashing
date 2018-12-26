@@ -5,7 +5,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.*;
 
 class HTable<K, V> extends Hashtable<K, V> implements Map<K, V> {
-    private int numPair = 2; // максимальное кол-во пар (по умолчанию в Java 11)
+    private int numPair = 11; // максимальное кол-во пар (по умолчанию в Java 11)
     private int mod; //счетчик изменения таблицы
     private int size = 0;
     private Pair<K, V>[] table;

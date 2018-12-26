@@ -5,7 +5,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.*;
 
 class HTable<K, V> extends Hashtable<K, V> implements Map<K, V> {
-    private int numPair = 11; // максимальное кол-во пар (по умолчанию в Java 11)
+    private int numPair = 5; // максимальное кол-во пар (по умолчанию в Java 11)
     private int mod; //счетчик изменения таблицы
     private int size = 0;
     private Pair<K, V>[] table;
@@ -21,7 +21,7 @@ class HTable<K, V> extends Hashtable<K, V> implements Map<K, V> {
     }
 
     //получение простого числа меньшего размера таблицы для HashCode2
-    public int getPrime() {
+    private int getPrime() {
         int limit = numPair - 1;
         if (limit == 2) return numPair;
         boolean[] a = new boolean[numPair];
